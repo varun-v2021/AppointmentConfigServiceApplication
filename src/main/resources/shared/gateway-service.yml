@@ -1,0 +1,15 @@
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:  
+    patient-service:
+      path: /patients/**
+      serviceId: patient-service
+      stripPrefix: false
+      sensitiveHeaders:
+
+server:
+  port: 8080
